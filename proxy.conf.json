@@ -1,0 +1,12 @@
+{
+  "/subjects": {
+    "target": {
+      "host": "sfeirluxtechnicalevent.appspot.com",
+      "protocol": "https:",
+      "port": 443
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventsService} from '../../services/events.service';
 import {Observable} from 'rxjs';
-import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-agenda',

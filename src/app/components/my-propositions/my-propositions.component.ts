@@ -14,7 +14,6 @@ export class MyPropositionsComponent implements OnInit {
 
   constructor(private eventsService: EventsService, private authService: AuthService) { }
   ngOnInit() {
-    console.log(this.authService.currentUserToken.uid);
     this._subjects$ = this.eventsService.myPropositions(this.authService.currentUserToken.uid);
   }
 

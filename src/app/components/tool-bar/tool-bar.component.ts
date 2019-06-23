@@ -20,14 +20,15 @@ export class ToolBarComponent implements OnInit {
 
   ngOnInit() {
     this.afAuth.auth.onIdTokenChanged(user => {
-      user.getIdTokenResult().then(x => this._admin = x.claims.admin);
+      if (user) {
+        user.getIdTokenResult().then(x => this._admin = x.claims.admin);
+      } else { this._admin = false; }
     });
   }
 
   logout() {
     this.authService.doLogout()
       .then(() => {
-        this._admin = false;
         this.router.navigate(['']);
       }, (error) => {
         console.log('Logout error', error);
@@ -38,7 +39,7 @@ export class ToolBarComponent implements OnInit {
     this.authService.doGoogleLogin()
       .then((x) => {
         console.log(x);
-        this.router.navigate(['/agenda']);
+        this.router.navigate(['']);
       }, (error) => {
         console.log('Logout error', error);
       });

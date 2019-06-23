@@ -2,6 +2,12 @@
   flex: 1 1 auto;
 }
 
+img {
+  max-height: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 .tab {
   margin: 0 30px;
   cursor: pointer;
@@ -18,15 +24,5 @@ mat-toolbar {
   }
 }
 
-.floaty {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-}
 
-.floaty-btn {
-  cursor: hand;
-  cursor: pointer;
-  margin: 0px 5px;
-}
 

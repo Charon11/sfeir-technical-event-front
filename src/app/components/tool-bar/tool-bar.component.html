@@ -13,13 +13,14 @@
 </mat-toolbar>
 
 <mat-menu #appMenu="matMenu">
+  <button *ngIf="currentUserToken === null" mat-menu-item (click)="login()">
+    <div >
+      <span><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"></span>
+      <span >Log in with Google</span>
+    </div>
+  </button>
   <button *ngIf="currentUserToken" mat-menu-item (click)="logout()">Logout</button>
-  <button *ngIf="currentUserToken" mat-menu-item (click)="currentUserId()">user</button>
-  <button *ngIf="currentUserToken === null" mat-menu-item (click)="login()">Login</button>
+  <button *ngIf="currentUserToken && admin" mat-menu-item (click)="currentUserId()">token</button>
 </mat-menu>
 
-<div class="floaty" *ngIf="currentUserToken">
-  <div class="floaty-btn">
-    <button mat-fab="" ><mat-icon>add</mat-icon></button>
-  </div>
-</div>
+
