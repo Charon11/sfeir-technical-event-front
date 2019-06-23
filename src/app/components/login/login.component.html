@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-content>
+    <div class="row">
+      <button mat-stroked-button (click)="tryGoogleLogin()">
+        <div >
+          <span><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"></span>
+          <span >Log in with Google</span>
+        </div>
+      </button>
+
+    </div>
+    <div class="row">
+      <button mat-stroked-button color="primary" (click)="tryAnonymousLogin()">
+        <div >
+          <span><mat-icon>account_circle</mat-icon></span>
+          <span >Log in as Anonymous</span>
+        </div>
+      </button>
+
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <span>
+      <img src="https://www.sfeir.com/img/SFEIR.svg" alt="SFEIR logo">
+    </span>
+  <span class="tab" [routerLink]="['/agenda']">Agenda</span>
+  <span *ngIf="currentUserToken" class="tab" [routerLink]="['/propositions']">Mes propositions</span>
+  <span *ngIf="admin" class="tab" [routerLink]="['/propositions']">Admin</span>
+  <span class="spacer"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon class="icon">more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+  <button *ngIf="currentUserToken" mat-menu-item (click)="logout()">Logout</button>
+  <button *ngIf="currentUserToken" mat-menu-item (click)="currentUserId()">user</button>
+  <button *ngIf="currentUserToken === null" mat-menu-item (click)="login()">Login</button>
+</mat-menu>
+
+<div class="floaty" *ngIf="currentUserToken">
+  <div class="floaty-btn">
+    <button mat-fab="" ><mat-icon>add</mat-icon></button>
+  </div>
+</div>

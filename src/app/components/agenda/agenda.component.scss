@@ -1,0 +1,16 @@
+.agenda {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: space-around;
+  padding-top: 100px;
+  position: relative;
+  background-color: #f4f4f4;
+}
+
+app-event {
+  margin-bottom: 50px;
+}
+
