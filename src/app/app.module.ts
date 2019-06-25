@@ -26,6 +26,10 @@ import {MyPropositionsComponent} from './components/my-propositions/my-propositi
 import {AddEventDialogComponent} from './components/add-event-dialog/add-event-dialog.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { PropositionEventComponent } from './components/proposition-event/proposition-event.component';
+import { EditEventDialogComponent } from './components/edit-event-dialog/edit-event-dialog.component';
+import { AdminComponent } from './components/admin/admin/admin.component';
+import { AdminEventComponent } from './components/admin/admin-event/admin-event.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import {HttpClientModule} from '@angular/common/http';
     AgendaComponent,
     LoginComponent,
     MyPropositionsComponent,
-    AddEventDialogComponent
+    AddEventDialogComponent,
+    PropositionEventComponent,
+    EditEventDialogComponent,
+    AdminComponent,
+    AdminEventComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -57,7 +65,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatDialogModule,
     MatFormFieldModule
   ],
-  entryComponents: [AddEventDialogComponent],
+  entryComponents: [AddEventDialogComponent, EditEventDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

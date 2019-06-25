@@ -4,7 +4,7 @@
     </span>
   <span class="tab" [routerLink]="['/agenda']">Agenda</span>
   <span *ngIf="currentUserToken" class="tab" [routerLink]="['/propositions']">Mes propositions</span>
-  <span *ngIf="admin" class="tab" [routerLink]="['/propositions']">Admin</span>
+  <span *ngIf="admin" class="tab" [routerLink]="['/admin']">Admin</span>
   <span class="spacer"></span>
 
   <button mat-icon-button [matMenuTriggerFor]="appMenu">
