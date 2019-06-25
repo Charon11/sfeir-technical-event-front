@@ -1,0 +1,31 @@
+<mat-card class="event-card"
+          [ngClass]="{
+            'accepted': subject?.status === 'Accepté',
+            'refused': subject?.status === 'Refusé',
+            'pending': subject?.status === 'Nouveau'
+          }">
+  <mat-card-header>
+    <div mat-card-avatar [style.height]="'50px'"
+         [style.width]="'50px'"
+         [style.background-image]="photoUrl"
+         [style.background-position]="'center'"
+         [style.background-size]="'cover'"></div>
+    <mat-card-title>{{subject?.title}}</mat-card-title>
+    <mat-card-subtitle *ngIf="subject?.creationDate">Le {{toDate(subject?.creationDate) | date:'dd/MM/yyyy'}} par {{subject?.createdBy.displayName}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content [ngClass]="{
+      'quarter-backs': subject?.subjectType === 'QUARTER_BACKS',
+      'bouffe-front': subject?.subjectType === 'BOUFFE_FRONT',
+      'beyond-keyboards': subject?.subjectType === 'BEYOND_KEYBOARDS'
+      }">
+    <div class="content">
+      <p *ngIf="subject?.description">
+        {{subject?.description}}
+      </p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button (click)="refuse()">Refuser</button>
+    <button mat-raised-button color="primary" (click)="accept()">Accepter</button>
+  </mat-card-actions>
+</mat-card>
