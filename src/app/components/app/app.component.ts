@@ -3,6 +3,7 @@ import {EventsService} from '../../services/events.service';
 import {AuthService} from '../../services/auth.service';
 import {MatDialog} from '@angular/material';
 import {AddEventDialogComponent} from '../add-event-dialog/add-event-dialog.component';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import {AddEventDialogComponent} from '../add-event-dialog/add-event-dialog.comp
 export class AppComponent implements OnInit {
   title = 'sfeir-event-front';
 
-  constructor(private eventsService: EventsService, private authService: AuthService, private dialog: MatDialog) {
+  constructor(private eventsService: EventsService,
+              private authService: AuthService,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {

@@ -18,6 +18,16 @@
   width: 550px;
 }
 
+@media screen and (max-width: 450px) {
+  .event-card {
+    max-width: 300px;
+  }
+
+  .content {
+    width: 300px;
+  }
+}
+
 .subtitle {
   display: flex;
   flex-direction: row;
@@ -26,6 +36,7 @@
   align-items: stretch;
   align-content: stretch;
 }
+
 
 mat-card {
   padding: 0;
@@ -46,6 +57,10 @@ mat-card {
 
   mat-card-actions:last-child {
     padding-bottom: 4px;
+  }
+
+  .mat-stroked-button {
+    margin-left: 8px;
   }
 
   .quarter-backs {

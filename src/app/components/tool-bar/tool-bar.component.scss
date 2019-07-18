@@ -9,7 +9,7 @@ img {
 }
 
 .tab {
-  margin: 0 30px;
+  margin: 0 20px;
   cursor: pointer;
 }
 
@@ -21,6 +21,89 @@ mat-toolbar {
   background-color: white;
   img {
     vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 450px)  {
+
+  .menu {
+    display: inline-block;
+    img {
+      padding-left: 10px;
+    }
+  }
+  .small {
+    display: none;
+  }
+
+  .spacer-before {
+    flex: 1 1 auto;
+    display: flex;
+  }
+  mat-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
+  }
+  .title {
+    display: flex;
+  }
+  .agenda-menu {
+    display: block;
+  }
+  .agenda-tab {
+    display: none;
+  }
+  .my-propositions-menu {
+    display: block;
+  }
+  .my-propositions-tab {
+    display: none;
+  }
+  .admin-menu {
+    display: block;
+  }
+  .admin-tab {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 451px)  {
+
+  .menu {
+    display: none;
+  }
+  .small {
+    display: flex;
+  }
+
+  .spacer-before {
+    flex: 1 1 auto;
+    display: none;
+  }
+  .title {
+    display: none;
+  }
+  .agenda-menu {
+    display: none;
+  }
+  .agenda-tab {
+    display: flex;
+  }
+  .my-propositions-menu {
+    display: none;
+  }
+  .my-propositions-tab {
+    display: flex;
+  }
+  .admin-menu {
+    display: none;
+  }
+  .admin-tab {
+    display: flex;
   }
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EventsService} from '../../services/events.service';
-import {AuthService} from '../../services/auth.service';
+import {EventsService} from '../../../services/events.service';
+import {AuthService} from '../../../services/auth.service';
 import {Observable} from 'rxjs';
 import {MatDialog} from '@angular/material';
 

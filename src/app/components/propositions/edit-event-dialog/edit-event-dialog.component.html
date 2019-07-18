@@ -14,10 +14,15 @@
         <mat-option *ngFor="let type of typeOptions" value="{{type.code}}">{{type.label}}</mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-slide-toggle formControlName="record" required color="primary">
+      Souhaitez-vous être filmé ?
+    </mat-slide-toggle>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions  align="end">
   <button mat-button mat-dialog-close>Annuler</button>
-  <button mat-raised-button color="primary" type="submit" (click)="save()" [disabled]="!eventForm.valid">Ajouter</button>
+  <button mat-raised-button color="primary" type="submit" (click)="save()" [disabled]="!eventForm.dirty">Modifier</button>
 </mat-dialog-actions>
+<ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium"></ngx-spinner>
+
 

@@ -4,6 +4,7 @@
             'refused': subject?.status === 'Refusé',
             'pending': subject?.status === 'Nouveau'
           }">
+  <ngx-spinner [style.display]="subject?.pending ? 'block' : 'none'" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium"></ngx-spinner>
   <mat-card-header>
     <div mat-card-avatar [style.height]="'50px'"
          [style.width]="'50px'"
@@ -25,7 +26,8 @@
     </div>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-stroked-button (click)="refuse()">Refuser</button>
-    <button mat-raised-button color="primary" (click)="accept()">Accepter</button>
+    <button mat-button [disabled]="subject?.pending" (click)="openEditDialog()">Modifier</button>
+    <button [disabled]="subject?.pending || subject?.status === 'Refusé'" mat-stroked-button (click)="refuse()">Refuser</button>
+    <button [disabled]="subject?.pending" mat-raised-button color="primary" (click)="openDialog()">Accepter</button>
   </mat-card-actions>
 </mat-card>

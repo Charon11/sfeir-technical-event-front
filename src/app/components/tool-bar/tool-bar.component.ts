@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-tool-bar',
@@ -18,11 +19,24 @@ export class ToolBarComponent implements OnInit {
   ) {
   }
 
+
+  get isAgenda() {
+    return this.router.url === '/agenda';
+  }
+  get isPropostion() {
+    return this.router.url === '/propositions';
+  }
+  get isAdmin() {
+    return this.router.url === '/admin';
+  }
+
   ngOnInit() {
     this.afAuth.auth.onIdTokenChanged(user => {
       if (user) {
         user.getIdTokenResult().then(x => this._admin = x.claims.admin);
-      } else { this._admin = false; }
+      } else {
+        this._admin = false;
+      }
     });
   }
 
@@ -47,6 +61,10 @@ export class ToolBarComponent implements OnInit {
 
   get admin(): boolean {
     return this._admin;
+  }
+
+  get isTest(): boolean {
+    return !environment.production;
   }
 
   get currentUserToken() {

@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AgendaComponent} from './components/agenda/agenda.component';
+import {AgendaComponent} from './components/agenda/agenda/agenda.component';
 import {canActivate, loggedIn, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
-import {MyPropositionsComponent} from './components/my-propositions/my-propositions.component';
+import {MyPropositionsComponent} from './components/propositions/my-propositions/my-propositions.component';
 import {AdminComponent} from './components/admin/admin/admin.component';
 
 

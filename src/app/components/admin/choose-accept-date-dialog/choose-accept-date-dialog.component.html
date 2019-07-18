@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Date de l'événement</h2>
+<mat-dialog-content>
+  <form [formGroup]="acceptForm">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="Date de présentation" formControlName="date" required>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1 required></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Lien Workplace</mat-label>
+      <input matInput type="text" placeholder="Lien Workplace" class="form-control" formControlName="link">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-raised-button color="primary" type="submit" (click)="save()" [disabled]="!acceptForm.valid">Accepter</button>
+</mat-dialog-actions>
+<ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium"></ngx-spinner>
+

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EventsService} from '../../services/events.service';
+import {AuthService} from '../../services/auth.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-add-event-dialog',
@@ -15,7 +17,8 @@ export class AddEventDialogComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<AddEventDialogComponent>,
               private fb: FormBuilder,
-              private eventService: EventsService
+              private eventService: EventsService,
+              private spinner: NgxSpinnerService
   ) {
     this.createForm();
     this._typeOptions = [
@@ -41,11 +44,13 @@ export class AddEventDialogComponent implements OnInit {
       title: ['', Validators.required],
       description: [''],
       subjectType: ['', Validators.required],
+      record: [true, Validators.required],
     });
   }
 
   addEvent() {
+    this.spinner.show();
     const event = {...this.eventForm.value};
-    this.eventService.addEvent(event).subscribe(() => this.dialogRef.close());
+    this.eventService.addEvent(event).subscribe(() => this.dialogRef.close(), () => this.spinner.hide());
   }
 }

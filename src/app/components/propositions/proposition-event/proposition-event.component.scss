@@ -1,9 +1,31 @@
+.accepted {
+  border-left: solid green 5px;
+}
+
+.refused {
+  border-left: solid red 5px;
+}
+
+.pending {
+  border-left: solid dodgerblue 5px;
+}
+
 .event-card {
   max-width: 550px;
 }
 
 .content {
   width: 550px;
+}
+
+@media screen and (max-width: 450px) {
+  .event-card {
+    max-width: 300px;
+  }
+
+  .content {
+    width: 300px;
+  }
 }
 
 .subtitle {
@@ -63,5 +85,3 @@ mat-card {
     }
   }
 }
-
-

@@ -2,25 +2,57 @@
     <span>
       <img src="https://www.sfeir.com/img/SFEIR.svg" alt="SFEIR logo">
     </span>
-  <span class="tab" [routerLink]="['/agenda']">Agenda</span>
-  <span *ngIf="currentUserToken" class="tab" [routerLink]="['/propositions']">Mes propositions</span>
-  <span *ngIf="admin" class="tab" [routerLink]="['/admin']">Admin</span>
+
+  <span class="spacer-before"></span>
+  <span *ngIf="isAgenda" class="title">Agenda</span>
+  <span *ngIf="isPropostion" class="title">Mes propositions</span>
+  <span *ngIf="isAdmin" class="title">Admin</span>
+  <span class="tab agenda-tab" [routerLink]="['/agenda']">Agenda</span>
+  <span *ngIf="currentUserToken" class="tab my-propositions-tab" [routerLink]="['/propositions']">Mes propositions</span>
+  <span *ngIf="admin" class="tab admin-tab" [routerLink]="['/admin']">Admin</span>
   <span class="spacer"></span>
 
-  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <button class="small" mat-button *ngIf="currentUserToken === null" (click)="login()">
+    <div>
+      <span><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"></span>
+      <span>Log in with Google</span>
+    </div>
+  </button>
+
+  <button *ngIf="currentUserToken === null" class="menu" (click)="login()" mat-icon-button>
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
+  </button>
+
+  <button mat-button class="small" *ngIf="currentUserToken" (click)="logout()">
+    <mat-icon aria-hidden="false">logout</mat-icon>
+    Logout
+  </button>
+
+  <button *ngIf="currentUserToken" class="menu" mat-icon-button [matMenuTriggerFor]="appMenu">
     <mat-icon class="icon">more_vert</mat-icon>
   </button>
 </mat-toolbar>
 
 <mat-menu #appMenu="matMenu">
-  <button *ngIf="currentUserToken === null" mat-menu-item (click)="login()">
-    <div >
-      <span><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"></span>
-      <span >Log in with Google</span>
-    </div>
+
+  <button *ngIf="currentUserToken && admin && isTest" mat-menu-item (click)="currentUserId()">token</button>
+  <button *ngIf="currentUserToken" mat-menu-item class="agenda-menu" [routerLink]="['/agenda']">
+    <mat-icon class="icon">calendar_today</mat-icon>
+    Agenda
   </button>
-  <button *ngIf="currentUserToken" mat-menu-item (click)="logout()">Logout</button>
-  <button *ngIf="currentUserToken && admin" mat-menu-item (click)="currentUserId()">token</button>
+  <button *ngIf="currentUserToken" mat-menu-item class="my-propositions-menu" [routerLink]="['/propositions']">
+    <mat-icon class="icon">perm_contact_calendar</mat-icon>
+    Mes propositions
+  </button>
+  <button *ngIf="admin" mat-menu-item class="admin-menu" [routerLink]="['/admin']">
+    <mat-icon class="icon">supervisor_account</mat-icon>
+    Admin
+  </button>
+  <button *ngIf="currentUserToken" mat-menu-item (click)="logout()">
+    <mat-icon class="icon">logout</mat-icon>
+    Logout
+  </button>
+
 </mat-menu>
 
 

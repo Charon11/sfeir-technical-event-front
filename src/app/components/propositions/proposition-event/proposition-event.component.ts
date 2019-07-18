@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import Timestamp = firebase.firestore.Timestamp;
 import {MatDialog} from '@angular/material';
 import {EditEventDialogComponent} from '../edit-event-dialog/edit-event-dialog.component';
+import {DeleteConfirmDialogComponent} from '../delete-confirm-dialog/delete-confirm-dialog.component';
 
 @Component({
   selector: 'app-proposition-event',
@@ -40,6 +41,14 @@ export class PropositionEventComponent implements OnInit {
     this.dialog.open(EditEventDialogComponent, {
       data : this.subject,
       width: '90%',
+    });
+
+  }
+
+  openConfirmDialog() {
+    this.dialog.open(DeleteConfirmDialogComponent, {
+      data : this.subject.id,
+      width: '300px',
     });
 
   }
