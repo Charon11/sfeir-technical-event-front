@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EventsService} from '../../services/events.service';
-import {AuthService} from '../../services/auth.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
@@ -25,6 +24,7 @@ export class AddEventDialogComponent implements OnInit {
       {code: 'QUARTER_BACKS', label: 'Quarter Backs'},
       {code: 'BOUFFE_FRONT', label: 'Bouffe Front'},
       {code: 'BEYOND_KEYBOARDS', label: 'Beyond Keyboards'},
+      {code: 'SFEIR_HOBBIES', label: 'Sfeir Hobbies'},
     ];
   }
 

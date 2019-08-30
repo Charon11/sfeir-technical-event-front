@@ -3,8 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {EventsService} from '../../../services/events.service';
 import {merge, Observable} from 'rxjs';
-import {mergeMap} from 'rxjs/operators';
-import {AuthService} from '../../../services/auth.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
@@ -28,6 +26,7 @@ export class EditEventDialogComponent implements OnInit {
       {code: 'QUARTER_BACKS', label: 'Quarter Backs'},
       {code: 'BOUFFE_FRONT', label: 'Bouffe Front'},
       {code: 'BEYOND_KEYBOARDS', label: 'Beyond Keyboards'},
+      {code: 'SFEIR_HOBBIES', label: 'Sfeir Hobbies'},
     ];
   }
 

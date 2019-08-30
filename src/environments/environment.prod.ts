@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  commandsUrl: 'https://sfeirluxtechnicalevent.appspot.com',
   firebaseConfig : {
     apiKey: 'AIzaSyAD4GN9J4dgK9JjtrCxYYDSpaGh4djD8hs',
     authDomain: 'sfeirluxtechnicalevent.firebaseapp.com',

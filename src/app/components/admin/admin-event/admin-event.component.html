@@ -17,7 +17,8 @@
   <mat-card-content [ngClass]="{
       'quarter-backs': subject?.subjectType === 'QUARTER_BACKS',
       'bouffe-front': subject?.subjectType === 'BOUFFE_FRONT',
-      'beyond-keyboards': subject?.subjectType === 'BEYOND_KEYBOARDS'
+      'beyond-keyboards': subject?.subjectType === 'BEYOND_KEYBOARDS',
+      'sfeir-hobbies': subject?.subjectType === 'SFEIR_HOBBIES'
       }">
     <div class="content">
       <p *ngIf="subject?.description">

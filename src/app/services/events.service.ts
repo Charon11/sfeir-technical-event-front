@@ -6,8 +6,8 @@ import {environment} from '../../environments/environment';
 import {filter, flatMap, map, mergeMap, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthService} from './auth.service';
-import * as firebase from 'firebase/app';
-import Timestamp = firebase.firestore.Timestamp;
+import {firestore} from 'firebase';
+import Timestamp = firestore.Timestamp;
 import {NgxSpinnerService} from 'ngx-spinner';
 
 @Injectable({

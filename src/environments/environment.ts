@@ -3,9 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  // commandsUrl: '',
-  commandsUrl: 'https://sfeirluxtechnicalevent.appspot.com',
+  production: false,
+  commandsUrl: '',
   firebaseConfig : {
     apiKey: 'AIzaSyAD4GN9J4dgK9JjtrCxYYDSpaGh4djD8hs',
     authDomain: 'sfeirluxtechnicalevent.firebaseapp.com',

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import * as firebase from 'firebase/app';
-import Timestamp = firebase.firestore.Timestamp;
+import {firestore} from 'firebase';
+import Timestamp = firestore.Timestamp;
 import {MatDialog} from '@angular/material';
 import {EditEventDialogComponent} from '../edit-event-dialog/edit-event-dialog.component';
 import {DeleteConfirmDialogComponent} from '../delete-confirm-dialog/delete-confirm-dialog.component';

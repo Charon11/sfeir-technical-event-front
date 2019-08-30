@@ -10,7 +10,7 @@
       <textarea matInput placeholder="Description" class="form-control" formControlName="description"></textarea>
     </mat-form-field>
     <mat-form-field>
-      <mat-select placeholder="Select" formControlName="subjectType" required>
+      <mat-select placeholder="Type d'event" formControlName="subjectType" required>
         <mat-option *ngFor="let type of typeOptions" value="{{type.code}}">{{type.label}}</mat-option>
       </mat-select>
     </mat-form-field>

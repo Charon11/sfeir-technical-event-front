@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import * as firebase from 'firebase/app';
-import Timestamp = firebase.firestore.Timestamp;
+import {firestore} from 'firebase';
+import Timestamp = firestore.Timestamp;
 import {EventsService} from '../../../services/events.service';
 import {EditEventDialogComponent} from '../../propositions/edit-event-dialog/edit-event-dialog.component';
 import {ChooseAcceptDateDialogComponent} from '../choose-accept-date-dialog/choose-accept-date-dialog.component';
