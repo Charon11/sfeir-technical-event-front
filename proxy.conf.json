@@ -1,4 +1,24 @@
 {
+  "/api/**": {
+    "target": {
+      "host": "us-central1-sfeirluxtechnicalevent.cloudfunctions.net",
+      "protocol": "https:",
+      "port": 443
+    },
+    "pathRewrite": {
+      "^/api/create": "/Create",
+      "^/api/accept": "/Accept",
+      "^/api/delete": "/Delete",
+      "^/api/refuse": "/Refuse",
+      "^/api/change-description": "/ChangeDescription",
+      "^/api/change-title": "/ChangeTitle",
+      "^/api/change-type": "/ChangeType",
+      "^/api/change-record-authorisation": "/ChangeRecordAuthorisation"
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
   "/subjects": {
     "target": {
       "host": "sfeirluxtechnicalevent.appspot.com",

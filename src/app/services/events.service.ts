@@ -57,7 +57,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.post(
-        `${this.url}/subjects`,
+        `api/create`,
         event,
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )
@@ -69,7 +69,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${event.id}/accept`,
+        `api/accept/${event.id}`,
         {scheduleDate: date, link},
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         ),
@@ -91,7 +91,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${event.id}/refuse`,
+        `api/refuse/${event.id}`,
         Date.now(),
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )
@@ -113,7 +113,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${entityId}/delete`,
+        `api/delete/${entityId}`,
         Date.now(),
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )
@@ -135,7 +135,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${entityId}/change-description`,
+        `api/change-description/${entityId}/`,
         {description},
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )
@@ -157,7 +157,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${entityId}/change-title`,
+        `api/change-title/${entityId}/`,
         {title},
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )
@@ -179,7 +179,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${entityId}/change-type`,
+        `api/change-type/${entityId}`,
         {subjectType: type},
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )
@@ -201,7 +201,7 @@ export class EventsService {
     return from(this.authService.currentUserToken.getIdToken()).pipe(
       tap(() => this.spinner.show()),
       flatMap(x => this.http.put(
-        `${this.url}/subjects/${entityId}/change-record-authorisation`,
+        `api/change-record-authorisation/${entityId}`,
         {record},
         {headers: new HttpHeaders({Authorization: `Bearer ${x}`})}
         )

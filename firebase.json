@@ -8,6 +8,38 @@
     ],
     "rewrites": [
       {
+        "source": "/api/create",
+        "function": "Create"
+      },
+      {
+        "source": "/api/accept/*",
+        "function": "Accept"
+      },
+      {
+        "source": "/api/delete/*",
+        "function": "Delete"
+      },
+      {
+        "source": "/api/refuse/*",
+        "function": "Refuse"
+      },
+      {
+        "source": "/api/change-description/*",
+        "function": "ChangeDescription"
+      },
+      {
+        "source": "/api/change-title/*",
+        "function": "ChangeTitle"
+      },
+      {
+        "source": "/api/change-type/*",
+        "function": "ChangeType"
+      },
+      {
+        "source": "/api/change-record-authorisation/*",
+        "function": "ChangeRecordAuthorisation"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
