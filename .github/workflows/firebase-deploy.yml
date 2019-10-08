@@ -1,4 +1,4 @@
-name: Publish Firebase Functions
+name: Publish Firebase App
 
 on:
   push:
@@ -19,8 +19,10 @@ jobs:
         with:
           version: 10.x
       - name: Install dependencies
-        run: npm  ci
-      - name: Deploy Firebase Functions
+        run: npm ci
+      - name: Build Application
+        run: npm run dist
+      - name: Deploy Firebase Host
         uses: pizzafox/firebase-action@master
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
