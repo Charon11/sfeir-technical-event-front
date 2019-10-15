@@ -26,6 +26,11 @@ mat-toolbar {
 
 @media screen and (max-width: 450px)  {
 
+  .sfeir-logo {
+    transform: scale(1.5);
+    width: 75px;
+  }
+
   .menu {
     display: inline-block;
     img {
@@ -72,6 +77,11 @@ mat-toolbar {
 }
 
 @media screen and (min-width: 451px)  {
+
+  .sfeir-logo {
+    transform: scale(2);
+    width: 100px;
+  }
 
   .menu {
     display: none;
