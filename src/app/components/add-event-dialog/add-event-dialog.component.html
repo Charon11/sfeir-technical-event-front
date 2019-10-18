@@ -14,7 +14,7 @@
         <mat-option *ngFor="let type of typeOptions" value="{{type.code}}">{{type.label}}</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-slide-toggle formControlName="record" required color="primary">
+    <mat-slide-toggle [checked]="log()" formControlName="record" color="primary">
       Souhaitez-vous être filmé ?
     </mat-slide-toggle>
   </form>

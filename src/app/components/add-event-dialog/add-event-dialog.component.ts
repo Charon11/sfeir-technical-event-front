@@ -44,7 +44,7 @@ export class AddEventDialogComponent implements OnInit {
       title: ['', Validators.required],
       description: [''],
       subjectType: ['', Validators.required],
-      record: [true, Validators.required],
+      record: [true],
     });
   }
 
@@ -52,5 +52,9 @@ export class AddEventDialogComponent implements OnInit {
     this.spinner.show();
     const event = {...this.eventForm.value};
     this.eventService.addEvent(event).subscribe(() => this.dialogRef.close(), () => this.spinner.hide());
+  }
+
+  log() {
+    console.log(this.eventForm.value);
   }
 }
