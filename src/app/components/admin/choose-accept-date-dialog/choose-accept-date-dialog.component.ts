@@ -36,8 +36,10 @@ export class ChooseAcceptDateDialogComponent implements OnInit {
 
 
   save() {
+    const scheduleDate = new Date(this.acceptForm.value.date);
+    scheduleDate.setHours(12);
     this.spinner.show();
-    this.eventService.acceptEvent(this._subject, this.acceptForm.value.date, this.acceptForm.value.link)
+    this.eventService.acceptEvent(this._subject, scheduleDate, this.acceptForm.value.link)
       .subscribe(() => this.dialogRef.close(), () => this.spinner.hide());
   }
 }
